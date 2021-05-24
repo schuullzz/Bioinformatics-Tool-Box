@@ -1,5 +1,7 @@
 //Timothy Schultz
 
+#include <unistd.h>
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -9,7 +11,8 @@
 using namespace std;
 
 //Function Declarations.
-void menu();
+static void usage(string);
+static void menu();
 void transcription();
 void translation();
 string getFile();
@@ -26,8 +29,29 @@ int findEndIndex(vector<int>, int);
 bool checkPosition(int);
 string translation(vector<string>, int, int);
 
-int main()
+int main(int argc, char* argv[])
 {
+	//Contains switch value
+	int opt;
+	//String containing file name
+	string fileName = argv[0];
+
+	//Getopt to parse h
+	while((opt = getopt(argc, argv, "h")) != -1)
+	{
+		switch(opt)
+		{
+			case 'h':
+				usage(fileName);
+				return 0;
+			case '?':
+				usage(fileName);
+				return 0;
+		}
+	}
+
+
+	//Contains users choice
 	int choice;
 
 	cout << "Bioinformatics Tool Box:\n" << endl;
@@ -40,19 +64,27 @@ int main()
 			cout << "\n";
 		} while (choice != 1 && choice != 2 && choice != 3);
 
-		switch (choice) {
-		case 1: transcription();
-			break;
-		case 2: translation();
-			break;
-		case 3: break;
+		switch (choice) 
+		{
+			case 1: transcription();
+				break;
+			case 2: translation();
+				break;
+			case 3: break;
 		}
+
 	} while (choice != 3);
 
 	return 0;
 }
 
-void menu()
+static void usage(string file)
+{
+	cout << "Usage: " << file << "[file]" << endl;
+	cout << "Usage: " << file << " < [file]" << endl;
+}
+
+static void menu()
 {
 	cout << "1. Transcription" << endl;
 	cout << "2. Translation" << endl;
