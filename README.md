@@ -27,26 +27,25 @@ Bioinformatics Tool Box:
 2. Translation
 3. Quit
 ```
-
-Choosing to start "Transcription" will generate the following prompt for an input file:
-
-```
-
-In this example, the following input was given as "test.txt".
+In this example, the following input was given as "test.txt"
 
 ```
 TACAAAGGGTATGTAATT
 ```
+
 Upon successful transcription, the RNA sequence will be written to the file "mRNA.txt".
+
 ```
 Your file has successfully been transcribed.
 ```
 
 Choosing "Translation" will generate another prompt for an input file, which here will be "mRNA.txt".
+
 ```
 AUGUUUCCCAUACAUUAA
 ```
 Upon successful translation, the polypeptide will be written to the file "Protein.txt".
+
 ```
 test.txt: TACAAAGGGTATGTAATT
 mRNA.txt: AUGUUUCCCAUACAUUAA
