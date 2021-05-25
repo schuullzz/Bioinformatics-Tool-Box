@@ -31,8 +31,6 @@ Bioinformatics Tool Box:
 Choosing to start "Transcription" will generate the following prompt for an input file:
 
 ```
-What is the name of the file you would like to read from?(Make sure to include .txt).
-```
 
 In this example, the following input was given as "test.txt".
 
