@@ -9,6 +9,7 @@
 #include <cctype>
 #include "dnatoprotein.h"
 #include "burrowwheeler.h"
+#include "fastqtofasta.h"
 
 using namespace std;
 
@@ -70,26 +71,29 @@ int main(int argc, char* argv[])
 			cout << "Selection: ";
 			cin >> choice;
 			cout << "\n";
-		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
+		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5);
 
 		switch (choice) 
 		{
 			case 1: transcription(fileName);
-				choice = 4;
+				choice = 5;
 				break;
 			case 2: translation(fileName);
-				choice = 4;
+				choice = 5;
 				break;
 			case 3: burrowTransform(fileName);
-				choice = 4;
+				choice = 5;
 				break;
-			case 4: break;
+			case 4: fastqfasta(fileName);
+				choice = 5;
+				break;
+			case 5: break;
 			default: cout << "Invalid Choice. Program Terminated." << endl;
-				 choice = 3;
+				 choice = 5;
 				 break;
 		}
 
-	} while (choice != 4);
+	} while (choice != 5);
 
 	return 0;
 }
@@ -104,5 +108,6 @@ static void menu()
 	cout << "1. Transcription" << endl;
 	cout << "2. Translation" << endl;
 	cout << "3. Burrow-Wheeler Transform" << endl;
-	cout << "4. Quit\n" << endl;
+	cout << "4. FASTQ to FASTA Conversion" << endl; 
+	cout << "5. Quit\n" << endl;
 }
