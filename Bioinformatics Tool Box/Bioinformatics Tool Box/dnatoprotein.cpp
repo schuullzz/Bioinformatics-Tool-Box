@@ -271,7 +271,7 @@ void translation(string file)
 	//a file.
 	for (int x = 0; x < index; x++)
 	{
-		for (indexProtein; indexProtein < 61; indexProtein++)
+		for (; indexProtein < 61; indexProtein++)
 		{
 			if (proteinOutput[x] == codonsProteins[indexProtein])
 			{
