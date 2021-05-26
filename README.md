@@ -3,6 +3,7 @@
 
 * Converts an antisense DNA sequence to an RNA sequence and translates RNA to a polypeptide.
 * Preforms a Burrow-Wheeler transformation on a user-input string, outputting the result of each transformation as well as the final transformed string.
+* Converts from FASTQ file format to FASTA file format.
 
 ## Installation
 
@@ -27,7 +28,8 @@ Bioinformatics Tool Box:
 1. Transcription
 2. Translation
 3. Burrow-Wheeler Transform
-4. Quit
+4. FASTQ to FASTA Conversion
+5. Quit
 ```
 ## Transcription and Translation
 
@@ -57,7 +59,7 @@ Protein.txt: MetPheProIleHis
 ```
 ## Burrow-Wheeler Tranformer
 
-In this example, the follwing input was given as "test2.txt"
+In this example, the follwing input was given as "test2.txt".
 
 ```
 foobar
@@ -83,6 +85,35 @@ rfooba
 ```
 borofa
 ```
+## FASTQ to FASTA Converter
+
+In this example, the following input was given as "test3.txt".
+
+```
+@seq1
+ATGCATGCATGC
++
+JJJJJJJJJJJJ
+@seq2
+TGCATGCATGCA
++
+!!!!!!!!!!!!
+@seq3
+GCATGCATGCAT
++
+IIIIIIIIIIII
+```
+Will generate "Conversion.txt":
+
+```
+>seq1
+ATGCATGCATGC
+>seq2
+TGCATGCATGCA
+>seq3
+GCATGCATGCAT
+```
+
 
 
 
