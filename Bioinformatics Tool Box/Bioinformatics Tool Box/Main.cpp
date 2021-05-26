@@ -8,6 +8,7 @@
 #include <vector>
 #include <cctype>
 #include "dnatoprotein.h"
+#include "burrowwheeler.h"
 
 using namespace std;
 
@@ -69,23 +70,26 @@ int main(int argc, char* argv[])
 			cout << "Selection: ";
 			cin >> choice;
 			cout << "\n";
-		} while (choice != 1 && choice != 2 && choice != 3);
+		} while (choice != 1 && choice != 2 && choice != 3 && choice != 4);
 
 		switch (choice) 
 		{
 			case 1: transcription(fileName);
-				choice = 3;
+				choice = 4;
 				break;
 			case 2: translation(fileName);
-				choice = 3;
+				choice = 4;
 				break;
-			case 3: break;
+			case 3: burrowTransform(fileName);
+				choice = 4;
+				break;
+			case 4: break;
 			default: cout << "Invalid Choice. Program Terminated." << endl;
 				 choice = 3;
 				 break;
 		}
 
-	} while (choice != 3);
+	} while (choice != 4);
 
 	return 0;
 }
@@ -99,5 +103,6 @@ static void menu()
 {
 	cout << "1. Transcription" << endl;
 	cout << "2. Translation" << endl;
-	cout << "3. Quit\n" << endl;
+	cout << "3. Burrow-Wheeler Transform" << endl;
+	cout << "4. Quit\n" << endl;
 }
