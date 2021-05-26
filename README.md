@@ -1,5 +1,5 @@
 # Bioinformatics Toolbox
-## Main.cpp dnatoprotein.cpp burrowwheeler.cpp dnatoprotein.h burrowwheeler.h
+## Main.cpp dnatoprotein.cpp burrowwheeler.cpp fastqtofasta.cpp dnatoprotein.h burrowwheeler.h fastqtofasta.h
 
 * Converts an antisense DNA sequence to an RNA sequence and translates RNA to a polypeptide.
 * Preforms a Burrow-Wheeler transformation on a user-input string, outputting the result of each transformation as well as the final transformed string.
