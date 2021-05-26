@@ -1,7 +1,8 @@
 # Bioinformatics Toolbox
-## Main.cpp dnatoprotein.cpp dnatoprotein.h
+## Main.cpp dnatoprotein.cpp burrowwheeler.cpp dnatoprotein.h burrowwheeler.h
 
-* This script converts an antisense DNA sequence to an RNA sequence and translates RNA to a polypeptide.
+* Converts an antisense DNA sequence to an RNA sequence and translates RNA to a polypeptide.
+* Preforms a Burrow-Wheeler transformation on a user-input string, outputting the result of each transformation as well as the final transformed string.
 
 ## Installation
 
@@ -13,9 +14,9 @@ make
 
 ## Usage
 
-Calling the Bioinformatics Toolbox will generate a prompt asking for the user to choose between transcription, translation, or quitting the program.
+Calling the Bioinformatics Toolbox will generate a prompt asking for the user to choose between transcription, translation, burrow-wheeler tranform or quitting the program.
 
-* toolbox [-h]
+toolbox [-h]
 
 ```
 ./toolbox [option var]
@@ -25,9 +26,12 @@ Bioinformatics Tool Box:
 
 1. Transcription
 2. Translation
-3. Quit
+3. Burrow-Wheeler Transform
+4. Quit
 ```
-In this example, the following input was given as "test.txt"
+*Transcription and Translation
+
+In this example, the following input was given as "test1.txt"
 
 ```
 TACAAAGGGTATGTAATT
@@ -51,3 +55,34 @@ test.txt: TACAAAGGGTATGTAATT
 mRNA.txt: AUGUUUCCCAUACAUUAA
 Protein.txt: MetPheProIleHis
 ```
+*Burrow-Wheeler Tranformer
+
+In this example, the follwing input was given as "test2.txt"
+
+```
+foobar
+```
+
+Upon success two files will be created Combination.txt and LastIndexSequence.txt.
+Combination.txt contains each successive step of the transformation per line.
+LastIndexSequence.txt contains the final transformed string.
+
+"Combination.txt" will contain: 
+
+```
+arfoob
+barfoo
+foobar
+obarfo
+oobarf
+rfooba
+```
+
+"LastIndexSequence.txt will contain:
+
+```
+borofa
+```
+
+
+
