@@ -29,7 +29,7 @@ Bioinformatics Tool Box:
 3. Burrow-Wheeler Transform
 4. Quit
 ```
-*Transcription and Translation
+##Transcription and Translation
 
 In this example, the following input was given as "test1.txt"
 
@@ -55,7 +55,7 @@ test.txt: TACAAAGGGTATGTAATT
 mRNA.txt: AUGUUUCCCAUACAUUAA
 Protein.txt: MetPheProIleHis
 ```
-*Burrow-Wheeler Tranformer
+##Burrow-Wheeler Tranformer
 
 In this example, the follwing input was given as "test2.txt"
 
