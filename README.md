@@ -7,7 +7,7 @@
 
 ## Installation
 
-The Bioinformatics Toolbox has been tested on CentOS v6.10 with gcc v6.1.0.
+The Bioinformatics Toolbox has been tested on Ubuntu v20.04.2 with gcc v9.3.0.
 
 ```
 make
